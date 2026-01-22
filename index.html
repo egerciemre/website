@@ -1,35 +1,167 @@
-<div class="w-1/2 h-full flex flex-col tech-bg border-r border-slate-800">
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dr. Emre Egerci | Portfolio</title>
     
-    <a href="https://buraya-notion-medizin-linki-gelecek" target="_blank" class="flex-1 flex flex-col items-center justify-center border-b border-slate-800 hover:bg-slate-800 transition-colors p-2 text-center">
-        <span class="font-['Roboto_Mono'] text-lg sm:text-2xl font-bold tracking-widest text-blue-400">MEDIZIN</span>
-        <span class="text-[9px] sm:text-xs text-slate-500 mt-1 uppercase tracking-widest leading-tight">Psychiatrie<br>(Deutsch)</span>
-    </a>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     
-    <a href="https://buraya-notion-software-linki-gelecek" target="_blank" class="flex-1 flex flex-col items-center justify-center border-b border-slate-800 hover:bg-slate-800 transition-colors p-2 text-center">
-        <span class="font-['Roboto_Mono'] text-lg sm:text-2xl font-bold tracking-widest text-green-400">Software</span>
-        <span class="text-[9px] sm:text-xs text-slate-500 mt-1 uppercase tracking-widest leading-tight">Medicine & AI<br>(English)</span>
-    </a>
-    
-    <a href="./cv_emre_2026.pdf" target="_blank" class="flex-1 flex flex-col items-center justify-center hover:bg-slate-800 transition-colors p-2 text-center">
-        <span class="font-['Roboto_Mono'] text-lg sm:text-2xl font-bold tracking-widest text-purple-400">lebenslauf</span>
-        <span class="text-[9px] sm:text-xs text-slate-500 mt-1 uppercase tracking-widest leading-tight">CV &<br>Kommunikation</span>
-    </a>
-</div>
+    <style>
+        /* 1. TEMEL AYARLAR (Sıfırlama) */
+        * { box-sizing: border-box; }
+        html, body { 
+            height: 100%; 
+            margin: 0; 
+            padding: 0; 
+            overflow: hidden; /* Kaydırmayı engeller */
+            font-family: sans-serif;
+        }
 
-<div class="w-1/2 h-full flex flex-col art-bg">
-    
-    <a href="https://buraya-notion-yazi-linki-gelecek" target="_blank" class="flex-1 flex flex-col items-center justify-center border-b border-stone-300 hover:bg-stone-200 transition-colors p-2 text-center">
-        <span class="font-['Playfair_Display'] text-xl sm:text-3xl italic font-semibold text-stone-800">Bilinç Akışı</span>
-        <span class="text-[9px] sm:text-xs text-stone-500 mt-1 uppercase tracking-widest leading-tight">Yazı & Şiir<br>(Türkçe)</span>
-    </a>
-    
-    <a href="https://buraya-notion-veya-instagram-linki" target="_blank" class="flex-1 flex flex-col items-center justify-center border-b border-stone-300 hover:bg-stone-200 transition-colors p-2 text-center">
-        <span class="font-['Playfair_Display'] text-xl sm:text-3xl italic font-semibold text-stone-800">Görsel Anlatı</span>
-        <span class="text-[9px] sm:text-xs text-stone-500 mt-1 uppercase tracking-widest leading-tight">Bildersprache<br>& Visual Narrative</span>
-    </a>
-    
-    <a href="https://buraya-notion-veya-soundcloud-linki" target="_blank" class="flex-1 flex flex-col items-center justify-center hover:bg-stone-200 transition-colors p-2 text-center">
-        <span class="font-['Playfair_Display'] text-xl sm:text-3xl italic font-semibold text-stone-800">Müzik</span>
-        <span class="text-[9px] sm:text-xs text-stone-500 mt-1 uppercase tracking-widest leading-tight">Hip<br>& Hop</span>
-    </a>
-</div>
+        /* 2. ANA İSKELET (Ekranı İkiye Bölme) */
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh; /* Ekran yüksekliği kadar */
+            height: 100dvh; /* Mobilde adres çubuğu sorununu çözer */
+        }
+
+        .column {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 3. KUTULAR (Linkler) */
+        .box {
+            flex: 1; /* Sütunu eşit 3 parçaya böler */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* Alt çizgiyi kaldırır */
+            text-align: center;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+
+        /* 4. SOL TARAF (MEDIZIN & SOFTWARE) TASARIMI */
+        .left-col {
+            background-color: #0f172a; /* Koyu Lacivert */
+            border-right: 1px solid #1e293b;
+            /* Devre Deseni */
+            background-image: linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .left-col .box {
+            border-bottom: 1px solid #1e293b;
+        }
+        .left-col .box:last-child { border-bottom: none; }
+        
+        /* Yazı Stilleri - Sol */
+        .title-tech {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.2rem; /* Mobilde varsayılan */
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .desc-tech {
+            font-size: 0.65rem;
+            color: #64748b; /* Gri */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+        /* Hover Efekti */
+        .left-col .box:active, .left-col .box:hover { background-color: #1e293b; }
+
+        /* 5. SAĞ TARAF (SANAT) TASARIMI */
+        .right-col {
+            background-color: #fcfbf9; /* Kağıt Rengi */
+            /* Gyrus Deseni (SVG) */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .right-col .box {
+            border-bottom: 1px solid #e7e5e4;
+        }
+        .right-col .box:last-child { border-bottom: none; }
+
+        /* Yazı Stilleri - Sağ */
+        .title-art {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem; /* Mobilde biraz daha büyük */
+            font-style: italic;
+            font-weight: 600;
+            color: #292524;
+            margin-bottom: 5px;
+        }
+        .desc-art {
+            font-family: sans-serif;
+            font-size: 0.65rem;
+            color: #78716c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+        /* Hover Efekti */
+        .right-col .box:active, .right-col .box:hover { background-color: #e7e5e4; }
+
+        /* 6. RENKLER (Text Colors) */
+        .text-blue { color: #60a5fa; }
+        .text-green { color: #4ade80; }
+        .text-purple { color: #c084fc; }
+
+        /* MASAÜSTÜ İÇİN ÖZEL AYAR (Ekran genişse yazıları büyüt) */
+        @media (min-width: 768px) {
+            .title-tech { font-size: 2rem; }
+            .title-art { font-size: 2.2rem; }
+            .desc-tech, .desc-art { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="column left-col">
+            
+            <a href="https://BURAYA_NOTION_MEDIZIN_LINKI" target="_blank" class="box">
+                <span class="title-tech text-blue">MEDIZIN</span>
+                <span class="desc-tech">Psychiatrie<br>(Deutsch)</span>
+            </a>
+            
+            <a href="https://BURAYA_NOTION_SOFTWARE_LINKI" target="_blank" class="box">
+                <span class="title-tech text-green">SOFTWARE</span>
+                <span class="desc-tech">Medicine & AI<br>(English)</span>
+            </a>
+            
+            <a href="./cv_emre.pdf" target="_blank" class="box">
+                <span class="title-tech text-purple">LEBENSLAUF</span>
+                <span class="desc-tech">CV &<br>Kommunikation</span>
+            </a>
+        </div>
+
+        <div class="column right-col">
+            
+            <a href="https://BURAYA_SUBSTACK_LINKI" target="_blank" class="box">
+                <span class="title-art">Bilinç Akışı</span>
+                <span class="desc-art">Yazı & Şiir<br>(Türkçe)</span>
+            </a>
+            
+            <a href="https://vsco.co/KULLANICI_ADIN" target="_blank" class="box">
+                <span class="title-art">Görsel Anlatı</span>
+                <span class="desc-art">Bildersprache<br>& Visual Narrative</span>
+            </a>
+            
+            <a href="https://BURAYA_MUZIK_LINKI" target="_blank" class="box">
+                <span class="title-art">Müzik</span>
+                <span class="desc-art">Hip<br>& Hop</span>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
