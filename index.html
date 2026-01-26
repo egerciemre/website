@@ -14,16 +14,16 @@
             height: 100%; 
             margin: 0; 
             padding: 0; 
-            overflow: hidden; /* Kaydırmayı engeller */
+            overflow: hidden; 
             font-family: sans-serif;
         }
 
-        /* 2. ANA İSKELET (Ekranı İkiye Bölme) */
+        /* 2. ANA İSKELET  */
         .container {
             display: flex;
             width: 100%;
-            height: 100vh; /* Ekran yüksekliği kadar */
-            height: 100dvh; /* Mobilde adres çubuğu sorununu çözer */
+            height: 100vh; 
+            height: 100dvh; 
         }
 
         .column {
@@ -33,24 +33,24 @@
             flex-direction: column;
         }
 
-        /* 3. KUTULAR (Linkler) */
+        /* 3. KUTULAR  */
         .box {
-            flex: 1; /* Sütunu eşit 3 parçaya böler */
+            flex: 1; 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-decoration: none; /* Alt çizgiyi kaldırır */
+            text-decoration: none; 
             text-align: center;
             padding: 10px;
             transition: background 0.3s;
         }
 
-        /* 4. SOL TARAF (MEDIZIN & SOFTWARE) TASARIMI */
+        /* 4. SOL TARAF TASARIMI */
         .left-col {
-            background-color: #0f172a; /* Koyu Lacivert */
+            background-color: #0f172a; 
             border-right: 1px solid #1e293b;
-            /* Devre Deseni */
+            
             background-image: linear-gradient(#1e293b 1px, transparent 1px), linear-gradient(90deg, #1e293b 1px, transparent 1px);
             background-size: 20px 20px;
         }
@@ -59,10 +59,10 @@
         }
         .left-col .box:last-child { border-bottom: none; }
         
-        /* Yazı Stilleri - Sol */
+        
         .title-tech {
             font-family: 'Roboto Mono', monospace;
-            font-size: 1.2rem; /* Mobilde varsayılan */
+            font-size: 1.2rem; 
             font-weight: 700;
             letter-spacing: 2px;
             margin-bottom: 5px;
@@ -74,13 +74,13 @@
             letter-spacing: 1px;
             line-height: 1.4;
         }
-        /* Hover Efekti */
+        
         .left-col .box:active, .left-col .box:hover { background-color: #1e293b; }
 
-        /* 5. SAĞ TARAF (SANAT) TASARIMI */
+        /* 5. SAĞ TARAF TASARIMI */
         .right-col {
-            background-color: #fcfbf9; /* Kağıt Rengi */
-            /* Gyrus Deseni (SVG) */
+            background-color: #fcfbf9; 
+            
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
         .right-col .box {
@@ -88,10 +88,10 @@
         }
         .right-col .box:last-child { border-bottom: none; }
 
-        /* Yazı Stilleri - Sağ */
+        
         .title-art {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem; /* Mobilde biraz daha büyük */
+            font-size: 1.4rem; 
             font-style: italic;
             font-weight: 600;
             color: #292524;
@@ -105,10 +105,10 @@
             letter-spacing: 1px;
             line-height: 1.4;
         }
-        /* Hover Efekti */
+        
         .right-col .box:active, .right-col .box:hover { background-color: #e7e5e4; }
 
-        /* 6. RENKLER (Text Colors) */
+        /* 6. RENKLER  */
         .text-blue { color: #60a5fa; }
         .text-green { color: #4ade80; }
         .text-purple { color: #c084fc; }
@@ -145,7 +145,7 @@
 
         <div class="column right-col">
             
-            <a href="https://BURAYA_SUBSTACK_LINKI" target="_blank" class="box">
+            <a href="https://emre795818.substack.com/" target="_blank" class="box">
                 <span class="title-art">Bilinç Akışı</span>
                 <span class="desc-art">Yazı & Şiir<br>(Türkçe)</span>
             </a>
